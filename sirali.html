@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Çarpım Tablosu Oyunu</title>  
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>  
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        
+       
+   
+    </head>
+    <body> 
+        <nav class="navbar nav-pills flex-column flex-sm-row">
+          <a class="flex-sm-fill text-sm-center nav-link" href="index.html">Ana Sayfa</a>
+          <a class="flex-sm-fill text-sm-center nav-link active" href="sirali.html">Sıralı Çarpım Tablosu</a>
+          <a class="flex-sm-fill text-sm-center nav-link" href="karisik.html">Karışık Çarpım Tablosu</a>
+          <a class="flex-sm-fill text-sm-center nav-link" href="rastgele.html">Rastgele Sorular</a>
+      </nav>
+      <br>
+      <!--
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+              <h1 class="display-4">Sıralı Çarpım Tablosu Oyunu</h1>
+              <p class="lead">Aşağıdan seçim yapın</p>
+            </div>
+          </div>
+          -->
+        <div class="container">
+          <div class="row">
+            <div class="col-md-9">
+              <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                  <div class="btn-group mr-2" role="group" aria-label="First group" id="pag">
+                    <button type="button" class="btn btn-success" value="1" onclick="tabloYap(this.value)">1'ler</button>
+                    <button type="button" class="btn btn-warning" value="2" onclick="tabloYap(this.value)">2'ler</button>
+                    <button type="button" class="btn btn-primary" value="3" onclick="tabloYap(this.value)">3'ler</button>
+                    <button type="button" class="btn btn-danger" value="4" onclick="tabloYap(this.value)">4'ler</button>
+                    <button type="button" class="btn btn-info" value="5" onclick="tabloYap(this.value)">5'ler</button>
+                    <button type="button" class="btn btn-dark" value="6" onclick="tabloYap(this.value)">6'lar</button>
+                    <button type="button" class="btn btn-warning" value="7" onclick="tabloYap(this.value)">7'ler</button>
+                    <button type="button" class="btn btn-secondary" value="8" onclick="tabloYap(this.value)">8'ler</button>
+                    <button type="button" class="btn btn-success" value="9" onclick="tabloYap(this.value)">9'lar</button>
+                  </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+              <span class="badge badge-pill badge-success" id="true"></span>
+              <span class="badge badge-pill badge-danger" id="false"></span>
+            </div>
+            </div>
+
+            <table class="table table-bordered table-dark" id="tablo">
+             
+              <tbody>
+                <tr>
+                  <td class="first">1</th>
+                  <td>x</td>
+                  <td class="second">1</td>
+                  <td>=</td>
+                  <td><input type="text" class="form-control"></td>
+                </tr>
+                <tr>
+                  <td class="first">1</th>
+                  <td>x</td>
+                  <td class="second">2</td>
+                  <td>=</td>
+                  <td><input type="text" class="form-control"></td>
+                </tr>
+                <tr>
+                  <td class="first">1</th>
+                  <td>x</td>
+                  <td class="second">3</td>
+                  <td>=</td>
+                  <td><input type="text" class="form-control"></td>
+                </tr>
+                <tr>
+                  <td class="first">1</th>
+                  <td>x</td>
+                  <td class="second">4</td>
+                  <td>=</td>
+                  <td><input type="text" class="form-control"></td>
+                </tr>
+                <tr>
+                  <td class="first">1</th>
+                  <td>x</td>
+                  <td class="second">5</td>
+                  <td>=</td>
+                  <td><input type="text" class="form-control"></td>
+                </tr>
+                <tr>
+                  <td class="first">1</th>
+                  <td>x</td>
+                  <td class="second">6</td>
+                  <td>=</td>
+                  <td><input type="text" class="form-control"></td>
+                </tr>
+                <tr>
+                  <td class="first">1</th>
+                  <td>x</td>
+                  <td class="second">7</td>
+                  <td>=</td>
+                  <td><input type="text" class="form-control"></td>
+                </tr>
+                <tr>
+                  <td class="first">1</th>
+                  <td>x</td>
+                  <td class="second">8</td>
+                  <td>=</td>
+                  <td><input type="text" class="form-control"></td>
+                </tr>
+                <tr>
+                  <td class="first">1</th>
+                  <td>x</td>
+                  <td class="second">9</td>
+                  <td>=</td>
+                  <td><input type="text" class="form-control"></td>
+                </tr>
+                <tr>
+                  <td class="first">1</th>
+                  <td>x</td>
+                  <td class="second">10</td>
+                  <td>=</td>
+                  <td><input type="text" class="form-control"></td>
+                </tr>
+                <tr>
+                  <td colspan="5">
+                    <button type="button" class="btn btn-success btn-lg btn-block" onclick="control()">Kontrol Et</button>
+                  </td>
+                </tr>
+                
+              </tbody>
+            </table>
+
+        </div>
+    
+    
+    
+    
+    </body>
+<style>
+  table tr td, table tr th{
+    text-align: center;
+    font-size: 1.5em;
+   
+  }
+  table{margin-top: 2em;}
+
+  #tablo{
+    display:none;
+  }
+  #true, #false, #pag > button{
+    font-size: 1.5em;
+  }
+  
+</style>
+
+<script>
+  function tabloYap(what){
+    //console.log($('#tablo').is(':visible'))
+    if($('#tablo').is(':visible')){
+      var ret = confirm("Zaten bir tablo var emin misin?")
+      if(ret){
+        $(".first").html(what)
+        $('#tablo').css('display', 'table')
+        $('#tablo > tr > td').css('color', 'white')
+        $(".form-control").val('')
+      }
+    }
+    else{
+      $(".first").html(what)
+      $('#tablo').css('display', 'table')
+      $('#tablo > tr > td').css('color', 'white')
+      $(".form-control").val('')
+    }
+  }
+
+  function control() {
+    var hata = 0;
+      $('#tablo tr').each(function() {
+        var bir = $(this).find(".first").html();
+        var iki = $(this).find(".second").html();   
+        var resU = $(this).find(".form-control").val();
+        //console.log(bir * iki + "=?" + resU);
+        if(bir * iki != resU) {
+          hata++
+          $(this).css("color","red")
+        }
+        else {
+          $(this).css("color","white")
+        }
+        
+      });
+      hata--
+      $("#true").html((10 - hata) + " Doğru")
+      $("#false").html(hata + " Yanlış")
+  }
+
+
+</script>
+</html>
+
+
