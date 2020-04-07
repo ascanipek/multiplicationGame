@@ -212,12 +212,13 @@
         myArray = shuffle(myArray)
         $('#tablo tr').each(function() {
           $(this).find(".second").html(myArray[i]);
+          $(this).css("color", "white")
           i++
         });
         // sabit çarpanı yazıyor
         $(".first").html(what)
         $('#tablo').css('display', 'table')
-        $('#tablo > tr > td').css('color', 'white')
+        //$('#tablo > tr > td').css('color', 'white')
         $(".form-control").val('')
       }
     }
@@ -227,12 +228,13 @@
       myArray = shuffle(myArray)
       $('#tablo tr').each(function() {
         $(this).find(".second").html(myArray[i]);
+        $(this).css("color", "white")
         i++
       });
       // sabit çarpanı yazıyor
       $(".first").html(what)
       $('#tablo').css('display', 'table')
-      $('#tablo > tr > td').css('color', 'white')
+      //$('#tablo > tr > td').css('color', 'white')
       $(".form-control").val('')
     }
   }

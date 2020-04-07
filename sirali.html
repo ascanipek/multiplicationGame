@@ -195,16 +195,22 @@
     if($('#tablo').is(':visible')){
       var ret = confirm("Zaten bir tablo var emin misin?")
       if(ret){
+        $('#tablo tr').each(function() {
+          $(this).css("color", "white")
+        });
         $(".first").html(what)
         $('#tablo').css('display', 'table')
-        $('#tablo > tr > td').css('color', 'white')
+        //$('#tablo > tr > td').css('color', 'white')
         $(".form-control").val('')
       }
     }
     else{
+      $('#tablo tr').each(function() {
+          $(this).css("color", "white")
+        });
       $(".first").html(what)
       $('#tablo').css('display', 'table')
-      $('#tablo > tr > td').css('color', 'white')
+      //$('#tablo > tr > td').css('color', 'white')
       $(".form-control").val('')
     }
   }
