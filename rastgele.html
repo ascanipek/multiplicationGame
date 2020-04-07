@@ -182,6 +182,7 @@
 </style>
 
 <script>
+  var downloadTimer
   function shuffle(arra1) {
     var ctr = arra1.length, temp, index;
     while (ctr > 0) {
@@ -234,8 +235,10 @@
       $('#timerUst').css("display", "block")
     }
   }
-  function control() {
-    var hata = 0;
+  function control(){
+    var hata = 0
+    clearInterval(downloadTimer)
+    $('#timer').removeClass("progress-bar-animated")
       $('#tablo tr').each(function() {
         var bir = $(this).find(".first").html();
         var iki = $(this).find(".second").html();   
@@ -261,7 +264,7 @@
   }
   function sayac(){
         var timeleft = 100;
-        var downloadTimer = setInterval(function(){
+        downloadTimer = setInterval(function(){
           if(timeleft <= 0){
             clearInterval(downloadTimer);
             console.log("Süre Bitti!")
