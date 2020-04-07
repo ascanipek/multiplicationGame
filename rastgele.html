@@ -63,14 +63,21 @@
                     <button type="button" class="btn btn-success" value="1" onclick="tabloYap(this.value)">Soru Getir Bakalım!</button>
                   </div>
             </div>
+            
             <div class="col-md-3">
               <span class="badge badge-pill badge-success" id="true"></span>
               <span class="badge badge-pill badge-danger" id="false"></span>
             </div>
             </div>
+            <div class="row" style="margin-top:5px; margin-bottom:-20px;" id="timerUst">
+              <div class="col-sm-12"> 
+                <div class="progress">
+                  <div id="timer" class="progress-bar progress-bar-striped progress-bar-animated bg-danger" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div>
+                </div>
+              </div>
+            </div>
 
             <table class="table table-bordered table-dark" id="tablo">
-             
               <tbody>
                 <tr>
                   <td class="first">1</th>
@@ -165,7 +172,7 @@
   }
   table{margin-top: 2em;}
 
-  #tablo{
+  #tablo, #timerUst{
     display:none;
   }
   #true, #false{
@@ -181,6 +188,22 @@
 </style>
 
 <script>
+$(document).ready(function() {
+    console.log("hazır!")
+    var timeleft = 100;
+    var downloadTimer = setInterval(function(){
+      if(timeleft <= 0){
+        clearInterval(downloadTimer);
+        console.log("Süre Bitti!")
+      }
+      $('#timer').css('width', 100-timeleft + '%').attr('aria-valuenow', 100-timeleft); 
+      //document.getElementById("timer").value = 100 - timeleft;
+      timeleft -= 1.5;
+    }, 1000);
+
+});
+
+
   function shuffle(arra1) {
     var ctr = arra1.length, temp, index;
     while (ctr > 0) {
@@ -213,6 +236,7 @@
         $('#tablo').css('display', 'table')
         $('#tablo > tr > td').css('color', 'white')
         $(".form-control").val('')
+        $('#timerUst').css("display", "block")
       }
     }
     else{
@@ -229,6 +253,7 @@
       $('#tablo').css('display', 'table')
       $('#tablo > tr > td').css('color', 'white')
       $(".form-control").val('')
+      $('#timerUst').css("display", "block")
     }
   }
 
