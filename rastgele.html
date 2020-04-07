@@ -17,7 +17,8 @@
     </head>
     <body> 
       <nav class="navbar navbar-expand-lg navbar-dark bg-success">
-        <a class="navbar-brand" href="#">2D Sınıfı İçin</a>
+        <div class="container-xl">
+        <a class="navbar-brand" href="index.html">2D Sınıfı İçin</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -35,9 +36,9 @@
             <li class="nav-item active">
               <a class="nav-link" href="rastgele.html"><span class="sr-only">(current)</span>Rastgele Çarpma</a>
             </li>
-          </ul>
-         
+          </ul> 
         </div>
+      </div>
       </nav>
       <!-- 
         <nav class="navbar nav-pills flex-column flex-sm-row">
@@ -59,12 +60,13 @@
         <div class="container">
           <div class="row">
             <div class="col-md-9">
-                  <div id="pag" class="text-center">
+                  <div id="pag">
                     <button type="button" class="btn btn-success" value="1" onclick="tabloYap(this.value)">Soru Getir Bakalım!</button>
                   </div>
             </div>
             <div class="col-md-3">
               <span class="badge badge-pill badge-success" id="true"></span>
+              <span class="badge badge-pill badge-danger" id="false"></span>
               <span class="badge badge-pill badge-danger" id="false"></span>
             </div>
             </div>
