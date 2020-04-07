@@ -56,8 +56,8 @@
         <div class="container">
           <div class="row">
             <div class="col-md-9">
-              <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-                  <div class="btn-group mr-2" role="group" aria-label="First group" id="pag">
+              
+                  <div id="pag">
                     <button type="button" class="btn btn-success" value="1" onclick="tabloYap(this.value)">1'ler</button>
                     <button type="button" class="btn btn-warning" value="2" onclick="tabloYap(this.value)">2'ler</button>
                     <button type="button" class="btn btn-primary" value="3" onclick="tabloYap(this.value)">3'ler</button>
@@ -68,7 +68,7 @@
                     <button type="button" class="btn btn-secondary" value="8" onclick="tabloYap(this.value)">8'ler</button>
                     <button type="button" class="btn btn-success" value="9" onclick="tabloYap(this.value)">9'lar</button>
                   </div>
-                </div>
+                
             </div>
             <div class="col-md-3">
               <span class="badge badge-pill badge-success" id="true"></span>
@@ -175,8 +175,16 @@
   #tablo{
     display:none;
   }
-  #true, #false, #pag > button{
+
+  #true, #false{
     font-size: 1.5em;
+    margin-top: 5px;
+  }
+ #pag > button{
+    font-size: 1.5em;
+    margin-top: 5px;
+    margin-right: 5px;
+    width: 80px !important;
   }
   
 </style>
