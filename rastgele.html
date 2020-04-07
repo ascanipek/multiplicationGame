@@ -153,16 +153,10 @@
                   <td colspan="5">
                     <button type="button" class="btn btn-success btn-lg btn-block" onclick="control()">Kontrol Et</button>
                   </td>
-                </tr>
-                
+                </tr>  
               </tbody>
             </table>
-
         </div>
-    
-    
-    
-    
     </body>
 <style>
   table tr td, table tr th{
@@ -188,22 +182,6 @@
 </style>
 
 <script>
-$(document).ready(function() {
-    console.log("hazır!")
-    var timeleft = 100;
-    var downloadTimer = setInterval(function(){
-      if(timeleft <= 0){
-        clearInterval(downloadTimer);
-        console.log("Süre Bitti!")
-      }
-      $('#timer').css('width', 100-timeleft + '%').attr('aria-valuenow', 100-timeleft); 
-      //document.getElementById("timer").value = 100 - timeleft;
-      timeleft -= 1.5;
-    }, 1000);
-
-});
-
-
   function shuffle(arra1) {
     var ctr = arra1.length, temp, index;
     while (ctr > 0) {
@@ -215,9 +193,9 @@ $(document).ready(function() {
     }
     return arra1;
   }
-
-
   function tabloYap(what){
+    sayac()
+    $(".form-control").prop("disabled", false)
     //console.log($('#tablo').is(':visible'))
     if($('#tablo').is(':visible')){
       var ret = confirm("Zaten bir tablo var emin misin?")
@@ -256,7 +234,6 @@ $(document).ready(function() {
       $('#timerUst').css("display", "block")
     }
   }
-
   function control() {
     var hata = 0;
       $('#tablo tr').each(function() {
@@ -271,21 +248,33 @@ $(document).ready(function() {
         else {
           $(this).css("color","white")
         }
-        
       });
       hata--
       $("#true").html((10 - hata) + " Doğru")
       $("#false").html(hata + " Yanlış")
-
       if(hata == 0)
         var devamMi = confirm("Tebrikler Hepsi Doğru! \nBir kez daha oynamak ister misin?")
         if(devamMi){
           $('#tablo').css('display', 'none')
           tabloYap(1)
         }
-         
-        
   }
+  function sayac(){
+        var timeleft = 100;
+        var downloadTimer = setInterval(function(){
+          if(timeleft <= 0){
+            clearInterval(downloadTimer);
+            console.log("Süre Bitti!")
+            alert("Süre Bitti")
+            $(".form-control").prop("disabled", true)
+            $('#timer').removeClass("progress-bar-animated")
+            control()
+          }
+          $('#timer').css('width', 100-timeleft + '%').attr('aria-valuenow', 100-timeleft); 
+          //document.getElementById("timer").value = 100 - timeleft;
+          timeleft -= 1.75;
+        }, 1000);
+    }
 
 
 </script>
